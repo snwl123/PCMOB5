@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import React from "react";
 import { useState, useEffect } from "react";
 import {
@@ -17,7 +18,8 @@ export default function SignInScreen({ navigation }) {
 
   function login() {
     Keyboard.dismiss();
-    // do stuff here to log in
+    AsyncStorage.setItem("token","");
+    navigation.navigate("Account")
   }
 
   return (
