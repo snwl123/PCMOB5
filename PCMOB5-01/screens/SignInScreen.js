@@ -24,8 +24,10 @@ export default function SignInScreen({ navigation }) {
     console.log("------Login------")
     Keyboard.dismiss();
     
-    try {
-      const response = await axios.post(API + API_LOGIN, {
+    try
+    {
+      const response = await axios.post(API + API_LOGIN,
+      {
         username,
         password,
       });
@@ -34,7 +36,10 @@ export default function SignInScreen({ navigation }) {
 
       AsyncStorage.setItem("token", response.data.access_token);
       navigation.navigate("Account");
-    } catch (error) {
+    } 
+
+    catch (error)
+    {
       console.log("Error logging in!");
       console.log(error.response);
 
